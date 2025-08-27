@@ -8,7 +8,10 @@ using namespace std;
 int main() {
 	Inventory<Item> inven(0);
 	inven.AddItem(Item("tset", 50));
-	inven.AddItem(Item("test2", 30));	
+	inven.AddItem(Item("test2", 30));
+	inven.Resize();
+	inven.AddItem(Item("test2", 10));
+
 	inven.PrintAllItems();
 	Inventory<Item> inven2(0);
 	inven2.AddItem(Item("tset", 10));

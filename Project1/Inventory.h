@@ -55,17 +55,17 @@ public:
 	{			
 		
 		delete[] pitems;
-		pitems[1];
 		pitems = nullptr;
 	}
 
 	void AddItem(const T& item) {
-		++size;
-		if (size < capacity) {
+		if (size < capacity-1) {
+			++size;
 			pitems[size] = item;
 		}
 		else {		
 			Resize();
+			++size;
 			pitems[size] = item;
 		}
 	}
@@ -74,7 +74,7 @@ public:
 		capacity *= 2;
 		T* newPitems = new T[capacity];
 
-		for (int i = 0; i < size; ++i) {
+		for (int i = 0; i <= size; ++i) {
 			newPitems[i] = pitems[i];
 		}
 
